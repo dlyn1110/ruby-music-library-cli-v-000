@@ -63,9 +63,10 @@ end
      puts "Please enter the name of a genre:"
       genre = Genre.find_by_name(get.chomp)
 
-     if genre
-       genre.songs.sort_by{|s| s.name}.each_with_index do | s, i|
-         puts "#{i + 1}. #{song.artist.name} - #{song.name}"
+      if result
+      sorted = result.songs.sort_by {|song| song.name}
+      sorted.each_with_index {|song, index|
+        puts "#{index+1}. #{song.artist.name} - #{song.name}"
    end
   end
  end
