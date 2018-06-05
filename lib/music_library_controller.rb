@@ -61,10 +61,10 @@ end
 
    def list_songs_by_genre
      puts "Please enter the name of a genre:"
-     input = gets.strip
+      genre = Genre.find_by_name(get.chomp)
 
-     if genre = Genre.find_by_name(input)
-       genre.songs.sort_by{|g| g.name}.each_with_index do | g, i|
+     if genre 
+       genre.songs.sort_by{|s| s.name}.each_with_index do | s, i|
          puts "#{i + 1}. #{song.artist.name} - #{song.name}"
    end
   end
