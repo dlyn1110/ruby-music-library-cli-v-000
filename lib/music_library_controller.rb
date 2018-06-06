@@ -79,7 +79,7 @@ end
     if i >= 0 && i <= Song.all.size
     song = Song.all.sort_by {|s| s.name}[i]
 
-    puts "Playing #{song.name} by #{song.artist.name}" 
+    puts "Playing #{song.name} by #{song.artist.name}"
     end
   end
 end
