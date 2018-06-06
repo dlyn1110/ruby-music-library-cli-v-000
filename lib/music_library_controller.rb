@@ -32,7 +32,7 @@ class MusicLibraryController
 #CLI methods
   def list_songs
     songs = Song.all.sort_by{|song| song.name}
-    songs.each_with_index(1) do |song, index|
+    songs.each_with_index do |song, index|
     puts "#{index}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
 
   end
