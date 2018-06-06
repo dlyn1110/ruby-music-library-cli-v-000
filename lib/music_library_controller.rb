@@ -86,15 +86,4 @@ def play_song
      song = sorted_list[index]
      puts "Playing #{song.name} by #{song.artist.name}" if index.between?(0, sorted_list.length - 1)
    end
-
-
-  # def play_song
-  #   puts "Which song number would you like to play?"
-  #   i = gets.chomp.to_i - 1
-  #
-  #   if i >= 0 && i <= Song.all.size
-  #   song = Song.all.sort_by {|s| s.name}[i]
-  #
-  #   puts "Playing #{song.name} by #{song.artist.name}"
-  #   end
   end
