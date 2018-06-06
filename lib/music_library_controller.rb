@@ -1,3 +1,4 @@
+require 'pry'
 class MusicLibraryController
 
   def initialize(path="./db/mp3s")#accepts one argument, the path to the MP3 files to be imported
@@ -33,6 +34,7 @@ class MusicLibraryController
     songs = Song.all.sort_by{|song| song.name}
     songs.each_with_index do |song, index|
     puts "#{index + 1}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
+    binding.pry
   end
  end
 
