@@ -78,14 +78,24 @@ end
  end
 end
 
-  def play_song
-    puts "Which song number would you like to play?"
-    i = gets.chomp.to_i - 1
+def play_song
+     puts "Which song number would you like to play?"
+     number = gets.chomp
+     index = number.to_i - 1
+     sorted_list = Song.all.uniq.sort_by {|song| song.name.downcase}
+     song = sorted_list[index]
+     puts "Playing #{song.name} by #{song.artist.name}" if index.between?(0, sorted_list.length - 1)
+   end
 
-    if i >= 0 && i <= Song.all.size
-    song = Song.all.sort_by {|s| s.name}[i]
 
-    puts "Playing #{song.name} by #{song.artist.name}"
-    end
+  # def play_song
+  #   puts "Which song number would you like to play?"
+  #   i = gets.chomp.to_i - 1
+  # 
+  #   if i >= 0 && i <= Song.all.size
+  #   song = Song.all.sort_by {|s| s.name}[i]
+  # 
+  #   puts "Playing #{song.name} by #{song.artist.name}"
+  #   end
   end
 end
